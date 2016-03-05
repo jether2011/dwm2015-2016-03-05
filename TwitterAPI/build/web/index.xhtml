@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:inputText id="uiMessage" 
+                         binding="#{twitterBean.uiMsg}" 
+                         value="#{twitterBean.twitt}" 
+                         size="100"/>
+            <br/><br/>            
+            <h:inputTextarea id="uiMessageResults" 
+                             binding="#{twitterBean.uiResultMsg}" 
+                             value="#{twitterBean.twittsResult}"
+                             rows="8" cols="500" readonly="false"/>
+            <br/>
+            <h:commandButton type="submit" 
+                             value="Enviar Twitt" 
+                             action="#{twitterBean.postingToTwitter()}"/>
+
+        </h:form>
+        <br/><br/><br/>
+        <h1>Query no Twitter</h1>
+        <h:form>
+            <h:inputText id="uiQuery" 
+                         binding="#{twitterBean.uiQuery}" 
+                         value="#{twitterBean.twittQuery}" 
+                         size="100"/>
+            <br/><br/>            
+            <h:inputTextarea id="uiMessageResults" 
+                             binding="#{twitterBean.uiResultQuery}" 
+                             value="#{twitterBean.twittsResultQuery}"
+                             rows="8" cols="500" readonly="false"/>
+            <br/>
+            <h:commandButton type="submit" 
+                             value="Consultar Tweeter" 
+                             action="#{twitterBean.consultarTweets()}"/>
+            
+        </h:form>
+    </h:body>
+</html>
+
